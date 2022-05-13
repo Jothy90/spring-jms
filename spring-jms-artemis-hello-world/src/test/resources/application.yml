@@ -1,2 +1,4 @@
 artemis:
   broker-url: vm://0
+  username: username
+  password: password

@@ -14,8 +14,17 @@ public class ReceiverConfig {
   @Value("${artemis.broker-url}")
   private String brokerUrl;
 
+  @Value("${artemis.username}")
+  private String username;
+
+  @Value("${artemis.password}")
+  private String password;
+
   @Bean
   public ActiveMQConnectionFactory receiverActiveMQConnectionFactory() {
+    ActiveMQConnectionFactory activeMQConnectionFactory = new ActiveMQConnectionFactory(brokerUrl);
+    activeMQConnectionFactory.setUser(username);
+    activeMQConnectionFactory.setPassword(password);
     return new ActiveMQConnectionFactory(brokerUrl);
   }
 
