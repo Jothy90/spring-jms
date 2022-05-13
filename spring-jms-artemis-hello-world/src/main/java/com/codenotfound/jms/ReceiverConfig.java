@@ -25,7 +25,7 @@ public class ReceiverConfig {
     ActiveMQConnectionFactory activeMQConnectionFactory = new ActiveMQConnectionFactory(brokerUrl);
     activeMQConnectionFactory.setUser(username);
     activeMQConnectionFactory.setPassword(password);
-    return new ActiveMQConnectionFactory(brokerUrl);
+    return activeMQConnectionFactory;
   }
 
   @Bean
